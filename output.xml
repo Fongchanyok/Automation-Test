@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.0 on win32)" generated="2024-11-17T21:24:49.598856" rpa="false" schemaversion="5">
+<suite id="s1" name="Apitest" source="C:\Users\Naruc\workshopautomate\apitest.robot">
+<test id="s1-t1" name="Tc_Get" line="11">
+<kw name="Open Browser">
+<msg time="2024-11-17T21:24:50.308840" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<arg>${BASE_URL}/products</arg>
+<arg>chrome</arg>
+<status status="FAIL" start="2024-11-17T21:24:50.308840" elapsed="0.000000">No keyword with name 'Open Browser' found.</status>
+</kw>
+<kw name="close Browser">
+<status status="NOT RUN" start="2024-11-17T21:24:50.309840" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-11-17T21:24:50.306840" elapsed="0.003000">No keyword with name 'Open Browser' found.</status>
+</test>
+<test id="s1-t2" name="Tc_02" line="16">
+<kw name="Open Browser">
+<msg time="2024-11-17T21:24:50.312853" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<arg>https://fakestoreapi.com/products?sort=asc</arg>
+<arg>chrome</arg>
+<status status="FAIL" start="2024-11-17T21:24:50.312853" elapsed="0.000000">No keyword with name 'Open Browser' found.</status>
+</kw>
+<kw name="close Browser">
+<status status="NOT RUN" start="2024-11-17T21:24:50.312853" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser">
+<arg>https://fakestoreapi.com/products?sort=desc</arg>
+<arg>chrome</arg>
+<status status="NOT RUN" start="2024-11-17T21:24:50.312853" elapsed="0.000000"/>
+</kw>
+<kw name="close Browser">
+<status status="NOT RUN" start="2024-11-17T21:24:50.313991" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-11-17T21:24:50.311345" elapsed="0.002646">No keyword with name 'Open Browser' found.</status>
+</test>
+<test id="s1-t3" name="Tc_POST" line="24">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-17T21:24:50.315174" level="INFO">Creating Session using : alias=fake_api, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>fake_api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-17T21:24:50.315174" elapsed="0.001001"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-17T21:24:50.316175" level="INFO">${data} = {'title': 'yok fongchan', 'price': '99.99', 'description': 'This is a test product', 'image': 'https://i.pravatar.cc', 'category': 'electronic'}</msg>
+<var>${data}</var>
+<arg>title=yok fongchan</arg>
+<arg>price=99.99</arg>
+<arg>description=This is a test product</arg>
+<arg>image=https://i.pravatar.cc</arg>
+<arg>category=electronic</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-17T21:24:50.316175" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-11-17T21:24:50.681685" level="INFO">POST Request : url=https://fakestoreapi.com/products 
+ path_url=/products 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '144', 'Content-Type': 'application/json'} 
+ body=b'{"title": "yok fongchan", "price": "99.99", "description": "This is a test product", "image": "https://i.pravatar.cc", "category": "electronic"}' 
+ </msg>
+<msg time="2024-11-17T21:24:50.681685" level="INFO">POST Response : url=https://fakestoreapi.com/products 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 17 Nov 2024 14:24:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'etag': 'W/"8f-jKQfvk4XkOc4shFMqio70ctYpUA"', 'x-powered-by': 'Express', 'cf-cache-status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=OJ2%2BJUY8BaMs6k4iD6R0J3wGVBDylRYVX5Zr2RZqIGWnnFalFm4xaiRatSoQeOgBYmsfEtLA9SOJu07tGiNkrWlZz0aW1EGU9DLYCEO%2FqF1PzMfBL7YQXbfF2uyv3mAfmjFo"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8e4062fc0c2b26c1-BKK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=7728&amp;sent=4&amp;recv=7&amp;lost=0&amp;retrans=0&amp;sent_bytes=2853&amp;recv_bytes=994&amp;delivery_rate=337008&amp;cwnd=251&amp;unsent_bytes=0&amp;cid=e8f355cf287c4502&amp;ts=282&amp;x=0"'} 
+ body={"id":21,"title":"yok fongchan","price":"99.99","description":"This is a test product","image":"https://i.pravatar.cc","category":"electronic"} 
+ </msg>
+<msg time="2024-11-17T21:24:50.681685" level="INFO">C:\Users\Naruc\workshopautomate\.venv\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-11-17T21:24:50.682709" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fake_api</arg>
+<arg>/products</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-17T21:24:50.316175" elapsed="0.366534"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-17T21:24:50.684761" level="INFO">200</msg>
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-17T21:24:50.683743" elapsed="0.001018"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-17T21:24:50.685764" level="INFO">{'id': 21, 'title': 'yok fongchan', 'price': '99.99', 'description': 'This is a test product', 'image': 'https://i.pravatar.cc', 'category': 'electronic'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-17T21:24:50.684761" elapsed="0.001003"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-11-17T21:24:50.687148" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-11-17T21:24:50.685764" elapsed="0.001384"/>
+</kw>
+<status status="PASS" start="2024-11-17T21:24:50.315174" elapsed="0.371974"/>
+</test>
+<test id="s1-t4" name="Tc_PUT" line="33">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-17T21:24:50.689196" level="INFO">Creating Session using : alias=fake_api, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>fake_api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-17T21:24:50.689196" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-17T21:24:50.690202" level="INFO">${data} = {'title': 'Updated Product', 'price': '109.99'}</msg>
+<var>${data}</var>
+<arg>title=Updated Product</arg>
+<arg>price=109.99</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-17T21:24:50.690202" elapsed="0.000000"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2024-11-17T21:24:51.064616" level="INFO">PUT Request : url=https://fakestoreapi.com/products/1 
+ path_url=/products/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '47', 'Content-Type': 'application/json'} 
+ body=b'{"title": "Updated Product", "price": "109.99"}' 
+ </msg>
+<msg time="2024-11-17T21:24:51.064616" level="INFO">PUT Response : url=https://fakestoreapi.com/products/1 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 17 Nov 2024 14:24:51 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'etag': 'W/"33-zzftFnofB60FacEP0IHZvvLXd1Y"', 'x-powered-by': 'Express', 'cf-cache-status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=cxOFDQl6RGsKMhC2KBmLyS8xJlh5BWfvRpQ%2FQfTF1tUrVadBxEy8sRAyOidF9gQBGuPPpk88WAN5QPWLpTI6keORbtH%2BWZ9DEog4tfQOplOVRT7Lwlqmo5QdjO9RA4n7KH3L"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8e4062fe7e0fee66-BKK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=32535&amp;sent=4&amp;recv=7&amp;lost=0&amp;retrans=0&amp;sent_bytes=2852&amp;recv_bytes=897&amp;delivery_rate=508136&amp;cwnd=251&amp;unsent_bytes=0&amp;cid=8233876bee22b73a&amp;ts=278&amp;x=0"'} 
+ body={"id":1,"title":"Updated Product","price":"109.99"} 
+ </msg>
+<msg time="2024-11-17T21:24:51.064616" level="INFO">C:\Users\Naruc\workshopautomate\.venv\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-11-17T21:24:51.066669" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fake_api</arg>
+<arg>/products/1</arg>
+<arg>json=${data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-17T21:24:50.691203" elapsed="0.375466"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-17T21:24:51.067689" level="INFO">200</msg>
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-17T21:24:51.066669" elapsed="0.001020"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-17T21:24:51.068714" level="INFO">{'id': 1, 'title': 'Updated Product', 'price': '109.99'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-17T21:24:51.067689" elapsed="0.001025"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-11-17T21:24:51.069715" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-11-17T21:24:51.068714" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2024-11-17T21:24:50.688174" elapsed="0.381541"/>
+</test>
+<test id="s1-t5" name="Tc_DELETE" line="42">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-17T21:24:51.072164" level="INFO">Creating Session using : alias=fake_api, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>fake_api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-17T21:24:51.071130" elapsed="0.001034"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2024-11-17T21:24:51.518554" level="INFO">DELETE Request : url=https://fakestoreapi.com/products/1 
+ path_url=/products/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2024-11-17T21:24:51.518554" level="INFO">DELETE Response : url=https://fakestoreapi.com/products/1 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 17 Nov 2024 14:24:51 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'etag': 'W/"16c-MMdrqY6N0sTiefLdsgtBej9eunY"', 'x-powered-by': 'Express', 'cf-cache-status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Iokcot2oS0J%2FBnZOBAn3h1wLhT8dJywQ8h%2FYOhGyZrC5i1HWtmH9Wm1Pw%2B4i%2F4J%2FQp3Ry7Lufl8jrv48%2BZAsdmaqgG9u9mO2%2Ff3%2B7zHilLihe1J7AkcU4cpDeXhF0249nGmZ"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8e406300aa427b5e-BKK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=7937&amp;sent=4&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2852&amp;recv_bytes=798&amp;delivery_rate=398244&amp;cwnd=251&amp;unsent_bytes=0&amp;cid=d5b444b931990f2e&amp;ts=385&amp;x=0"'} 
+ body={"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday","category":"men's clothing","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","rating":{"rate":3.9,"count":120}} 
+ </msg>
+<msg time="2024-11-17T21:24:51.518554" level="INFO">C:\Users\Naruc\workshopautomate\.venv\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-11-17T21:24:51.519843" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fake_api</arg>
+<arg>/products/1</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-17T21:24:51.072164" elapsed="0.447679"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-17T21:24:51.520863" level="INFO">200</msg>
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-17T21:24:51.519843" elapsed="0.001020"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-17T21:24:51.520863" level="INFO">{'id': 1, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': 109.95, 'description': 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday', 'category': "men's clothing", 'image': 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg', 'rating': {'rate': 3.9, 'count': 120}}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-17T21:24:51.520863" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-11-17T21:24:51.521890" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-11-17T21:24:51.521890" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-11-17T21:24:51.071130" elapsed="0.450760"/>
+</test>
+<test id="s1-t6" name="Tc_GET_CATEGORIES" line="50">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-17T21:24:51.522920" level="INFO">Creating Session using : alias=fake_api, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>fake_api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-17T21:24:51.522920" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-11-17T21:24:52.350209" level="INFO">GET Request : url=https://fakestoreapi.com/products/categories 
+ path_url=/products/categories 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-11-17T21:24:52.351234" level="INFO">GET Response : url=https://fakestoreapi.com/products/categories 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 17 Nov 2024 14:24:52 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'etag': 'W/"3e-cdq81BKoKIRIQmboBVN84Vj+vkM"', 'x-powered-by': 'Express', 'cf-cache-status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=GVfMyvZBbHC8f8V6ERuoyica517w36fESGprzoIU0IDa82I4M15%2BsCIVeZBhmsDglgntLuqhHNxQ42yzzYENBbVlM2D2NUt%2FJ9b03nAKCxCtqTWS1sKV6Amw4MOrwJCUnwfa"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8e4063036df7d03b-BKK', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=6955&amp;sent=4&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2852&amp;recv_bytes=785&amp;delivery_rate=383214&amp;cwnd=228&amp;unsent_bytes=0&amp;cid=08e291e652807ea8&amp;ts=770&amp;x=0"'} 
+ body=["electronics","jewelery","men's clothing","women's clothing"] 
+ </msg>
+<msg time="2024-11-17T21:24:52.351234" level="INFO">C:\Users\Naruc\workshopautomate\.venv\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-11-17T21:24:52.353372" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fake_api</arg>
+<arg>/products/categories</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-17T21:24:51.523957" elapsed="0.829415"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-17T21:24:52.354850" level="INFO">200</msg>
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-17T21:24:52.353842" elapsed="0.001008"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-17T21:24:52.355850" level="INFO">['electronics', 'jewelery', "men's clothing", "women's clothing"]</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-17T21:24:52.354850" elapsed="0.001000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-11-17T21:24:52.356849" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg time="2024-11-17T21:24:52.356849" level="FAIL">200.0 != 20.0</msg>
+<arg>${response.status_code}</arg>
+<arg>20</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="FAIL" start="2024-11-17T21:24:52.355850" elapsed="0.000999">200.0 != 20.0</status>
+</kw>
+<status status="FAIL" start="2024-11-17T21:24:51.522920" elapsed="0.833929">200.0 != 20.0</status>
+</test>
+<status status="FAIL" start="2024-11-17T21:24:49.600862" elapsed="2.757988"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="3" skip="0" id="s1" name="Apitest">Apitest</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-11-17T21:24:49.634891" level="ERROR">Error in file 'C:\Users\Naruc\workshopautomate\apitest.robot' on line 2: Importing library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\Naruc\workshopautomate\.venv\Scripts\robot.exe
+  C:\Users\Naruc\AppData\Local\Programs\Python\Python312\python312.zip
+  C:\Users\Naruc\AppData\Local\Programs\Python\Python312\DLLs
+  C:\Users\Naruc\AppData\Local\Programs\Python\Python312\Lib
+  C:\Users\Naruc\AppData\Local\Programs\Python\Python312
+  C:\Users\Naruc\workshopautomate\.venv
+  C:\Users\Naruc\workshopautomate\.venv\Lib\site-packages</msg>
+</errors>
+</robot>
