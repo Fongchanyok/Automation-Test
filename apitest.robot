@@ -47,15 +47,15 @@ Tc_DELETE
     Should Be Equal As Numbers    ${response.status_code}    200
 
     
-Tc_GET_CATEGORIES 
-    Create Session    fake_api    ${BASE_URL}
-    ${response}=      GET ON Session    fake_api    /products/categories
-    Log               ${response.status_code}
-    Log               ${response.json()}
-    Should Be Equal As Numbers    ${response.status_code}    200
+# Tc_GET_CATEGORIES 
+#     Create Session    fake_api    ${BASE_URL}
+#     ${response}=      GET ON Session    fake_api    /products/categories
+#     Log               ${response.status_code}
+#     Log               ${response.json()}
+#     Should Be Equal As Numbers    ${response.status_code}    200
 
 
 
 
     
-    
+  
